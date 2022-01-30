@@ -1,15 +1,22 @@
-version: '2'
+version: '3.8'
 
 services:
   wildfly:
     container_name: app
-    build: docker/wildfly
+    build:
+      context: docker/wildfly
+      args:
+        DB_NAME: demoDS
+        DB_USER: app
+        DB_PASS: app
+        DB_JNDI: DemoDS
     ports:
       - "8080:8080"
       - "9990:9990"
       - "8787:8787"
     depends_on:
       - db
+
   db:
     container_name: db
     image: mysql:8.0.28

@@ -1,8 +1,11 @@
 FROM jboss/wildfly
-ENV JBOSS_CLI /opt/jboss/wildfly/bin/jboss-cli.sh
+ENV JBOSS_BIN /opt/jboss/wildfly/bin
+ARG DB_NAME
+ARG DB_USER
+ARG DB_PASS
+ARG DB_JNDI
 
-
-RUN $JBOSS_HOME/bin/add-user.sh admin pati --silent
+RUN $JBOSS_BIN/add-user.sh admin pati --silent
 RUN mkdir /opt/jboss/wildfly/tmp
 
 ADD mysql-connector-java-8.0.28.jar $JBOSS_HOME/tmp
