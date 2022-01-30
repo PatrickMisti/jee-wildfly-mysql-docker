@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  wildfly:
+    container_name: app
+    build: docker/wildfly
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+      - "8787:8787"
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mysql:8.0.28
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=demoDS
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app
