@@ -1,9 +1,9 @@
 # jee-wildfly-mysql-docker
 
 ---
-##docker-compose
+## docker-compose
 config args for your project.
-###Wildfly
+### Wildfly
 - DB_NAME
 - DB_USER
 - DB_PASS
@@ -14,7 +14,7 @@ docker-compose yml file
 
 ![persistence](./readme-png/persistence-xml.png)
 
-###Mysql
+### Mysql
 set the environment variables to your needs
 please consider that:
 
@@ -29,19 +29,19 @@ must be the same as the args from wildfly
 
 ---
 # Config Remote Wildfly 25 Final
-##Server settings
+## Server settings
 - Add Jboss/Wildfly Server Settings with admin credentials
 - Add Remote Connection Settings to 8080 port
 - Add Before launch to war artifact
 
 ![Server](./readme-png/wildfly-server.png)
-##Deployment settings
+## Deployment settings
 - Set Deployment method to Native
 
 ![Deployment](./readme-png/wildfly-deploy.png)
 
 ---
-#Get Started
+# Get Started
 
 now you can remove all files until RestConfig.
 
@@ -49,7 +49,7 @@ in this project the url is localhost:8080/test/api/${your-endpoint-path} \
 to change the /test/ url part go to pom and override the finalname to your habits. \
 to change the /api/ url part go to RestConfig and change the ApplicatioinPath.
 
-#ToolStack 
+# ToolStack 
 - docker-compose
 - Wildfly 25.0.0.Final
 - Mysql 8.0.28
