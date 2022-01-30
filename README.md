@@ -1,6 +1,5 @@
 # jee-wildfly-mysql-docker
 
----
 ## docker-compose
 config args for your project.
 ### Wildfly
